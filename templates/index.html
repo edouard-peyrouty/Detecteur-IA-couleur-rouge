@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            h1{
+                color: rgb({{couleur[0]}},{{couleur[1]}},{{couleur[2]}});
+            }
+        </style>
+    </head>
+    <body>
+        {% if is_red %}
+            <h1>Rouge</h1>
+        {% else %}
+            <h1>Pas rouge</h1>
+        {% endif %}
+
+        <a href="/">Changer de couleur</a>
+        <a href="/update/{{couleur}}/{{is_red}}">D'accord</a>
+        <a href="/update/{{couleur}}/{{not is_red}}">Pas d'accord</a>
+
+        <section>
+            <h2>Etat du neurone</h2>
+            <p>{{neurone}}</p>
+        </section>
+    </body>
+</html>
