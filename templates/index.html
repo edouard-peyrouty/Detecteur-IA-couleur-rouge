@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <style>
-            h1{
-                color: rgb({{couleur[0]}},{{couleur[1]}},{{couleur[2]}});
-            }
-        </style>
-    </head>
-    <body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurone Rouge</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        h1 { color: rgb({{couleur[0]}},{{couleur[1]}},{{couleur[2]}}); }
+    </style>
+</head>
+<body>
+
+    <div class="card">
         {% if is_red %}
             <h1>Rouge</h1>
         {% else %}
             <h1>Pas rouge</h1>
         {% endif %}
+        <p class="rgb">rgb({{couleur[0]}}, {{couleur[1]}}, {{couleur[2]}})</p>
+    </div>
 
-        <a href="/">Changer de couleur</a>
-        <a href="/update/{{couleur}}/{{is_red}}">D'accord</a>
-        <a href="/update/{{couleur}}/{{not is_red}}">Pas d'accord</a>
+    <div class="feedback">
+        <a class="agree" href="/update/{{couleur}}/{{is_red}}">D'accord</a>
+        <a class="disagree" href="/update/{{couleur}}/{{not is_red}}">Pas d'accord</a>
+    </div>
 
-        <section>
-            <h2>Etat du neurone</h2>
-            <p>{{neurone}}</p>
-        </section>
-    </body>
+    <a class="new-color" href="/">↻ nouvelle couleur</a>
+
+    <section>
+        <h2>État du neurone</h2>
+        <p>{{neurone}}</p>
+    </section>
+
+</body>
 </html>
