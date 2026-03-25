@@ -16,8 +16,8 @@ Puis ouvrir [http://localhost:5000](http://localhost:5000).
 À chaque chargement de page, une couleur aléatoire est générée et le neurone prédit si elle est rouge ou non. 
 
 Deux boutons permettent de donner un feedback :
-- **D'accord** — la prédiction était correcte, rien ne change
-- **Pas d'accord** — la prédiction était fausse
+- **D'accord** : la prédiction était correcte, rien ne change
+- **Pas d'accord** : la prédiction était fausse
 
 Quand on clique sur **Pas d'accord**, la couleur et le label correct sont ajoutés aux données d'entraînement, puis le neurone se réentraîne automatiquement sur l'ensemble du jeu de données mis à jour. Le modèle converge en général en quelques dizaines d'itérations.
 
