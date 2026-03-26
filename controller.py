@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect
 from ia.class_neurone import Neurone
 from colors import generate_color, to_rgb, from_rgb
+import os
 
 neurone = Neurone()
 
@@ -10,8 +11,10 @@ def init():
 def index():
     color = generate_color()
     is_red = neurone.is_red(color)
-    color = to_rgb(color)
-    return render_template("index.html",couleur=color,is_red=is_red,neurone=neurone.etat)
+    color = to_rgb(color)    
+    test = os.environ.get('RENDER')
+        
+    return render_template("index.html",couleur=color,is_red=is_red,neurone=neurone.etat, test=test)
 
 def update(couleur,is_red):
     couleur = from_rgb(eval(couleur))
