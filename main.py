@@ -3,8 +3,6 @@ import keep_alive
 import os
 
 app = controller.init()
-if os.environ.get('RENDER'):
-    keep_alive.start()
 
 @app.route("/")
 def index():

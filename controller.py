@@ -11,10 +11,8 @@ def init():
 def index():
     color = generate_color()
     is_red = neurone.is_red(color)
-    color = to_rgb(color)    
-    test = os.environ.get('RENDER')
-        
-    return render_template("index.html",couleur=color,is_red=is_red,neurone=neurone.etat, test=test)
+    color = to_rgb(color)            
+    return render_template("index.html",couleur=color,is_red=is_red,neurone=neurone.etat)
 
 def update(couleur,is_red):
     couleur = from_rgb(eval(couleur))
