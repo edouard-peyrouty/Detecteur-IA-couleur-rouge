@@ -1,5 +1,4 @@
 import controller
-import keep_alive
 import os
 
 app = controller.init()
